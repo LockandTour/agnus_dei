@@ -3,17 +3,17 @@
 docs.x.ai
 '''
 
-#not used
+#not used currently
 #import requests
 #from flask import Flask, request, render_template
 
-#Needed imports
+#Needed imports - pigging backing off of the OpenAI library mostly
 import json
 import os
 from openai import OpenAI
 
 # Set the working directory
-os.chdir(r"C:\Users\richi\Documents\Git Hub\agnus_dei")
+os.chdir(r"C:\Users\richi\Documents\Git Hub\agnus_dei\agnus_dei")
 
 # API in a config file - this then reads the API key and stores it
 # XAI_API_KEY_Testing = "XXXXXXXXXXXXXXXXXXXXXXXXXXXX"
@@ -47,9 +47,7 @@ completion = client.chat.completions.create(
 response_message = completion.choices[0].message.content  # Access the content attribute directly
 
 # Save the response to a JSON file
-# "C:\\Users\\richi\\Documents\\Git Hub\\xAI Api Testing\\output.json"
-
-with open(f"C:\\Users\\richi\\Documents\\Git Hub\\xAI_Api_Testing\\{user_prompt}.json", "w") as json_file:
+with open(f"C:\\Users\\richi\\Documents\\Git Hub\\agnus_dei\\agnus_dei\\{user_prompt}.json", "w") as json_file:
     json.dump({"response": response_message}, json_file, indent=4)
 
 print("\n")
