@@ -46,9 +46,10 @@ completion = client.chat.completions.create(
    
 response_message = completion.choices[0].message.content  # Access the content attribute directly
 
-# Save the response to a JSON file
-with open(f"C:\\Users\\richi\\Documents\\Git Hub\\agnus_dei\\agnus_dei\\{user_prompt}.json", "w") as json_file:
-    json.dump({"response": response_message}, json_file, indent=4)
+# Save the response to a JSON file 
+# uncomment if you want to use this feature and change your directory
+#with open(f"C:\\Users\\richi\\Documents\\Git Hub\\agnus_dei\\agnus_dei\\{user_prompt}.json", "w") as json_file:
+#    json.dump({"response": response_message}, json_file, indent=4)
 
 print("\n")
 print(response_message)
